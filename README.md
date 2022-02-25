@@ -14,7 +14,7 @@
   * [Symbol](#symbol)
   * [Input Parameters](#test-bench-schematic)
   * [Transient Simulation Settings](#transient-settings)
-  * [Output Waveform](#output-waveforms)
+  * [Output Waveform](#output-waveform)
   * [Generated Netlist](#generated-netlist)
   * [Acknowledgement](#acknowledgement)
   * [References](#references)
@@ -58,7 +58,7 @@ The expected timing diagram is generated using ModelSim – Altera.
 ## Transient Settings
 <img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/Transient_settings.jpg" alt="" title="" width="50%" height="50%">
 
-## Output Waveforms
+## Output Waveform
 <img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/Output_Waveform.jpg" alt="" title="" width="75%" height="75%">
 
 ## Generated Netlist
