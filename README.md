@@ -17,6 +17,7 @@
   * [Output Waveform](#output-waveform)
   * [Generated Netlist](#generated-netlist)
   * [Acknowledgement](#acknowledgement)
+  * [Author](#author)
   * [References](#references)
 
 ## Abstract
@@ -68,6 +69,9 @@ The expected timing diagram is generated using ModelSim – Altera.
 1. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd.
 2. Synopsys India
 3. <a href = https://www.iith.ac.in/events/2022/02/15/Cloud-Based-Analog-IC-Design-Hackathon/>Cloud Based Analog IC Design Hackathon </a>
+
+## Author
+Navinkumar K is a student of PTU, Puducherry of 2023 Batch. He is a student of Electronics and Communication Engineering.
 
 ## References
 [1] Khare, Kavita & Shukla, Krishna. (2010). Design A 1Bit Low Power Full Adder Using Cadence Tool. AIP Conference Proceedings. 1324. 373-376. 10.1063/1.3526237.
