@@ -9,13 +9,13 @@
  
   
 - [Simulation in Synopsys Custom Compiler](#simulation-in-synopsys)
-  * [Input Parameters](#input-parameters)
-  * [Transient Simulation Settings](#transient-settings)
+
   * [Schematic](#schematic)
+  * [Symbol](#symbol)
+  * [Input Parameters](#test-bench-schematic)
+  * [Transient Simulation Settings](#transient-settings)
   * [Output Waveform](#output-waveforms)
   * [Generated Netlist](#generated-netlist)
-  * [Conclusion](#conclusion)
-  * [Author](#author)
   * [Acknowledgement](#acknowledgement)
   * [References](#references)
 
@@ -25,17 +25,48 @@ Conventional CMOS design employs pull-up and pull-down resistors to implement a 
 In this design, a 1-bit full adder is designed using conventional CMOS inverters and transmission gate. This results in fewer gates and lesser power dissipation.
 
 ## Truth Table
+
 ## Reference Circuit Details
+The following is the Boolean expression for the sum and carry out functions.
+sum = a ^ b ^ cin;
+cout = ((a ^ b) & cin) | (a & b);
+Efficient implementation of XOR is possible with fewer gates using the Transmission Gate Logic. The full adder in the design is implemented using NOR, NAND and majority NOT gates. The carry output is the complement of the majority NOT gate whose inputs are A, B, Cin.
+The expected timing diagram is generated using ModelSim – Altera.
+
 ## Reference Diagram
+<img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/Reference%20Circuit.jpg" alt="" title="" width="50%" height="50%">
+
 ## Expected Waveform
+<img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/Waveform.jpeg" alt="" title="" width="50%" height="50%">
+
 ## Tools Used
+* ModelSim - Altera - for simulation waveform generation
+* Synopsys Custom Compiler - for design
+* PrimeWave - for actual waveform generation
+
 ## Simulation in Synopsys
-## Input Parameters
-## Transient Settings
 ## Schematic
+<img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/Schematic.jpg" alt="" title="" width="50%" height="50%">
+
+## Symbol
+<img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/Symbol.jpeg" alt="" title="" width="25%" height="25%">
+
+## Test Bench Schematic
+<img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/Test_Circuit.jpg" alt="" title="" width="50%" height="50%">
+
+## Transient Settings
+<img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/Transient_settings.jpg" alt="" title="" width="50%" height="50%">
+
 ## Output Waveforms
+<img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/Output_Waveform.jpg" alt="" title="" width="75%" height="75%">
+
 ## Generated Netlist
-## Conclusion
-## Author
+<a href = https://github.com/NAvi349/trans-full-adder/blob/main/netlist/netlist.txt> Netlist </a>
+
 ## Acknowledgement
+1. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd.
+2. Synopsys India
+3. <a href = https://www.iith.ac.in/events/2022/02/15/Cloud-Based-Analog-IC-Design-Hackathon/>Cloud Based Analog IC Design Hackathon </a>
+
 ## References
+[1] Khare, Kavita & Shukla, Krishna. (2010). Design A 1Bit Low Power Full Adder Using Cadence Tool. AIP Conference Proceedings. 1324. 373-376. 10.1063/1.3526237.
