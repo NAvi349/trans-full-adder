@@ -25,6 +25,7 @@ Conventional CMOS design employs pull-up and pull-down resistors to implement a 
 In this design, a 1-bit full adder is designed using conventional CMOS inverters and transmission gate. This results in fewer gates and lesser power dissipation.
 
 ## Truth Table
+<img src="https://github.com/NAvi349/trans-full-adder/blob/main/images/truth_table.jpg" width="50%" height="50%">
 
 ## Reference Circuit Details
 The following is the Boolean expression for the sum and carry out functions.
