@@ -1,0 +1,58 @@
+*  Generated for: PrimeSim
+*  Design library name: cp_libtest
+*  Design cell name: add1bit_tb
+*  Design view name: schematic
+.lib 'saed32nm.lib' TT
+
+*Custom Compiler Version S-2021.09
+*Fri Feb 25 14:43:36 2022
+
+.global gnd!
+********************************************************************************
+* Library          : cp_libtest
+* Cell             : add1bit
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt add1bit a b cin cout sum vdd vss
+xm21 a net166 cout vss n105 w=0.1u l=0.03u nf=1 m=1
+xm15 cin net168 cout vss n105 w=0.1u l=0.03u nf=1 m=1
+xm23 net166 net168 vss vss n105 w=0.1u l=0.03u nf=1 m=1
+xm17 cin net166 sum vss n105 w=0.1u l=0.03u nf=1 m=1
+xm18 net166 cin sum vss n105 w=0.1u l=0.03u nf=1 m=1
+xm6 net93 a net168 vss n105 w=0.1u l=0.03u nf=1 m=1
+xm4 a net93 net168 net152 n105 w=0.1u l=0.03u nf=1 m=1
+xm0 net93 b vss vss n105 w=0.1u l=0.03u nf=1 m=1
+xm20 cout net168 a vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm14 cout net166 cin vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm22 net166 net168 vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm19 sum cin net168 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm16 sum net168 cin vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm7 net168 a b vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm5 net168 b a vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm1 net93 b vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+.ends add1bit
+
+********************************************************************************
+* Library          : cp_libtest
+* Cell             : add1bit_tb
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xi26 a b cin cout sum net41 gnd! add1bit
+c5 cout gnd! c=1p
+c4 sum gnd! c=1p
+v29 net41 gnd! dc=1.05
+v16 b gnd! dc=0 pulse ( 0 1.05 0 0.1u 0.1u 10u 20u )
+v15 cin gnd! dc=0 pulse ( 0 1.05 0 0.1u 0.1u 5u 10u )
+v17 a gnd! dc=0 pulse ( 0 1.05 0 0.1u 0.1u 20u 40u )
+.tran '1u' '60u' name=tran
+.option primesim_remove_probe_prefix = 0
+.probe v(*) i(*) level=1
+.probe tran v(a) v(b) v(cin) v(cout) v(sum)
+.temp 25
+.option primesim_output=wdf
+.option parhier = LOCAL
+.end
