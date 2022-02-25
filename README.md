@@ -1,4 +1,4 @@
-# Transmission Gate Full Adder
+# Transmission Gate Logic 1-bit Full Adder
 1 - bit Full Adder design using Transmission Gate Logic and Conventional Inverter - 28nm Technology.
   * [Abstract](#abstract)
   * [Truth Table](#truth-table)
